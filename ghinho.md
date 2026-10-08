@@ -521,7 +521,17 @@
   - **Bảo toàn dữ liệu & Triển khai:**
     + Sao lưu CSDL an toàn 100%: `backups/backup_20261006_143653.db` (360,448 bytes) kèm dump JSON.
     + Biên dịch Backend .NET 8 Release và Frontend Vite thành công 0 lỗi.
-    + Khởi động lại dịch vụ Backend (port 5000) và Frontend Vite (port 5173).
+- **2026-10-08 - Nâng Cấp Hệ Thống Hỗ Trợ Microsoft SQL Server & Kiến Trúc Dual-Database [ĐÃ HOÀN TẤT]:**
+  - **Mục đích:** Nâng cấp toàn diện mã nguồn Backend .NET 8 hỗ trợ Microsoft SQL Server (2019/2022/Docker/On-Premise), đồng thời bảo toàn cơ chế Dual-Provider tương thích ngược với SQLite nhúng.
+  - **Thư viện NuGet:** Cài đặt bổ sung `Microsoft.EntityFrameworkCore.SqlServer` (v8.0.6) vào `AssetManagement.Infrastructure`.
+  - **Cơ chế Nhận diện Tự động (Dynamic Database Provider):**
+    + Trong `Program.cs`, hệ thống tự động nhận diện loại CSDL thông qua cấu hình `DatabaseProvider` ("SqlServer" / "Sqlite") hoặc cấu trúc chuỗi kết nối `DefaultConnection`.
+    + Nếu kết nối SQL Server: Tự động kích hoạt `UseSqlServer()` với `EnableRetryOnFailure()` và `EnsureCreated()` tự động khởi tạo toàn bộ 18 bảng.
+    + Nếu kết nối SQLite: Tự động kích hoạt `UseSqlite()` với chế độ WAL Mode và RAM cache 20MB.
+  - **Công cụ Chuyển đổi Dữ liệu Zero-Data-Loss:**
+    + Phát triển script `scripts/migrate_sqlite_to_sqlserver.py` tự động xuất toàn bộ 18 bảng (964 bản ghi) từ SQLite sang file T-SQL chuẩn `backups/import_to_sqlserver.sql`.
+    + Đảm bảo thứ tự khóa ngoại (FK), xử lý `IDENTITY_INSERT`, escape ký tự tiếng Việt Unicode `N'...'` và bọc trong giao dịch `TRANSACTION` an toàn tuyệt đối.
+  - **Build & Deploy:** Biên dịch .NET 8 Release thành công 0 lỗi, cập nhật gói phát hành và đồng bộ `wwwroot/`.
 ---
 *(Tài liệu này được lưu trữ tại gốc dự án `ghinho.md`. Mọi thay đổi trong tương lai cần được bổ sung vào đây).*
 
