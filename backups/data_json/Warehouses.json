@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Name": "Kho CNTT",
+    "Description": "Quản lý thiết bị công nghệ thông tin"
+  },
+  {
+    "Id": 2,
+    "Name": "Kho KHTH",
+    "Description": "Kho Kế hoạch Tổng hợp"
+  },
+  {
+    "Id": 3,
+    "Name": "Kho Trang bị",
+    "Description": "Quản lý máy móc y tế"
+  }
+]

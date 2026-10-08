@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Title": "Máy in không in được",
+    "Description": "Máy in canon2900 tại PK4",
+    "DepartmentId": 2,
+    "AssetId": null,
+    "Status": 2,
+    "HandlingNotes": "",
+    "HandlerName": "Đ/c Hoàng kiểm tra máy cho PK",
+    "CreatedAt": "2026-09-29 00:36:29.630883",
+    "UpdatedAt": "2026-09-29 00:39:02.0556495"
+  },
+  {
+    "Id": 2,
+    "Title": "Máy in hết mực",
+    "Description": "2 máy in Brother phòng lấy mẫu hết mực",
+    "DepartmentId": 7,
+    "AssetId": null,
+    "Status": 3,
+    "HandlingNotes": "Đã hoàn thành ngày 28/9/26",
+    "HandlerName": "",
+    "CreatedAt": "2026-09-29 02:38:27.5277106",
+    "UpdatedAt": "2026-09-29 02:40:12.2574498"
+  },
+  {
+    "Id": 3,
+    "Title": "Đề xuất mua Máy tính",
+    "Description": "Trang bị cho Phòng khám 2 tại Khoa KB",
+    "DepartmentId": 20,
+    "AssetId": null,
+    "Status": 2,
+    "HandlingNotes": "kiểm tra và nắm hỗ trợ trang bị đầy đủ",
+    "HandlerName": "Hùng IT",
+    "CreatedAt": "2026-09-29 02:39:10.0218943",
+    "UpdatedAt": "2026-09-29 02:39:52.8020681"
+  }
+]

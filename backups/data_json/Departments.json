@@ -1,0 +1,150 @@
+[
+  {
+    "Id": 1,
+    "Name": "Khoa Hồi sức tích cực - Chống độc"
+  },
+  {
+    "Id": 2,
+    "Name": "Khoa Khám bệnh"
+  },
+  {
+    "Id": 3,
+    "Name": "Khoa Nội chung"
+  },
+  {
+    "Id": 4,
+    "Name": "Khoa Ngoại chung"
+  },
+  {
+    "Id": 5,
+    "Name": "Khoa Cấp cứu"
+  },
+  {
+    "Id": 6,
+    "Name": "Khoa Chẩn đoán hình ảnh - Chẩn đoán chức năng"
+  },
+  {
+    "Id": 7,
+    "Name": "Khoa Xét nghiệm - Giải phẫu bệnh"
+  },
+  {
+    "Id": 8,
+    "Name": "Khoa Gây mê hồi sức"
+  },
+  {
+    "Id": 9,
+    "Name": "Khoa Dược"
+  },
+  {
+    "Id": 10,
+    "Name": "Khoa Trang bị"
+  },
+  {
+    "Id": 11,
+    "Name": "Khoa Kiểm soát nhiễm khuẩn"
+  },
+  {
+    "Id": 12,
+    "Name": "Phòng Kế hoạch - Tổng hợp"
+  },
+  {
+    "Id": 13,
+    "Name": "Ban Giám đốc"
+  },
+  {
+    "Id": 14,
+    "Name": "Phòng Chính trị"
+  },
+  {
+    "Id": 15,
+    "Name": "Phòng Hậu cần - Kỹ thuật"
+  },
+  {
+    "Id": 16,
+    "Name": "Phòng Tham mưu - Hành chính"
+  },
+  {
+    "Id": 17,
+    "Name": "Phòng Điều dưỡng"
+  },
+  {
+    "Id": 18,
+    "Name": "Ban Tài chính"
+  },
+  {
+    "Id": 19,
+    "Name": "Ban Công nghệ thông tin"
+  },
+  {
+    "Id": 20,
+    "Name": "Khoa Nội tim mạch - Hô hấp"
+  },
+  {
+    "Id": 21,
+    "Name": "Khoa Nội tiêu hóa - Huyết học lâm sàng"
+  },
+  {
+    "Id": 22,
+    "Name": "Khoa Truyền nhiễm - Da liễu - Dị ứng"
+  },
+  {
+    "Id": 23,
+    "Name": "Khoa Nội cơ xương khớp - Nội tiết"
+  },
+  {
+    "Id": 24,
+    "Name": "Khoa Ung bướu"
+  },
+  {
+    "Id": 25,
+    "Name": "Khoa Thần kinh - Tâm thần - Đột quỵ"
+  },
+  {
+    "Id": 26,
+    "Name": "Khoa Y học cổ truyền"
+  },
+  {
+    "Id": 27,
+    "Name": "Khoa Phục hồi chức năng"
+  },
+  {
+    "Id": 28,
+    "Name": "Khoa Nội thận - Lọc máu"
+  },
+  {
+    "Id": 29,
+    "Name": "Khoa Y học dưới nước"
+  },
+  {
+    "Id": 30,
+    "Name": "Khoa Chấn thương, chỉnh hình"
+  },
+  {
+    "Id": 31,
+    "Name": "Khoa Ngoại tổng hợp"
+  },
+  {
+    "Id": 32,
+    "Name": "Khoa Mắt"
+  },
+  {
+    "Id": 33,
+    "Name": "Khoa Răng - Hàm - Mặt"
+  },
+  {
+    "Id": 34,
+    "Name": "Tai - Mũi - Họng"
+  },
+  {
+    "Id": 35,
+    "Name": "Khoa Phụ sản - Nhi"
+  },
+  {
+    "Id": 36,
+    "Name": "Khoa Dinh dưỡng"
+  },
+  {
+    "Id": 37,
+    "Name": "Khoa Y học dự phòng"
+  }
+]

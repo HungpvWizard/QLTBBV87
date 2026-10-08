@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "AssetId": 3,
+    "CompletedDate": "2026-07-04 15:17:30.0388338",
+    "Cost": "100000.0",
+    "CreatedDate": "2026-07-04 08:13:03.5192374",
+    "IssueDescription": "Vệ sinh máy",
+    "ReportedByUserId": null,
+    "ScheduledDate": "2026-07-04 00:00:00",
+    "Status": 3
+  },
+  {
+    "Id": 2,
+    "AssetId": 4,
+    "CompletedDate": "2026-09-06 08:39:29.0340155",
+    "Cost": "100000.0",
+    "CreatedDate": "2026-07-04 08:13:03.519239",
+    "IssueDescription": "Vệ sinh máy",
+    "ReportedByUserId": null,
+    "ScheduledDate": "2026-07-04 00:00:00",
+    "Status": 3
+  }
+]

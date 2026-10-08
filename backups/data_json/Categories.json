@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "CNTT",
+    "Type": 0,
+    "WarehouseId": 1
+  },
+  {
+    "Id": 2,
+    "Name": "Trang bị Máy Y tế",
+    "Type": 1,
+    "WarehouseId": 3
+  },
+  {
+    "Id": 3,
+    "Name": "Văn phòng phẩm",
+    "Type": 2,
+    "WarehouseId": 2
+  },
+  {
+    "Id": 4,
+    "Name": "Mặc định",
+    "Type": 1,
+    "WarehouseId": 3
+  }
+]

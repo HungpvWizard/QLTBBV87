@@ -1,0 +1,44 @@
+# Node modules & Dependencies
+node_modules/
+frontend/node_modules/
+
+# IDE & Editors
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Build outputs & Binaries
+bin/
+obj/
+dist/
+publish/
+DeployPackage/
+runtimes/
+linux-*/
+maccatalyst-*/
+osx-*/
+browser-wasm/
+*.zip
+*.exe
+*.dll
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+*.staticwebassets.runtime.json
+
+# Environment & Config secrets
+.env
+.env.local
+
+# SQLite Databases & Binary Backups (preserve source code & JSON dumps)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+backups/*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

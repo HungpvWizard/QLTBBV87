@@ -1,0 +1,123 @@
+[
+  {
+    "Id": 1,
+    "Code": "dashboard",
+    "Name": "Tổng quan Dashboard",
+    "Group": "Tổng quan",
+    "Description": "Theo dõi các chỉ số thống kê, biểu đồ tài sản thiết bị toàn viện",
+    "OrderIndex": 1,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 2,
+    "Code": "assets",
+    "Name": "Tài sản & Thiết bị",
+    "Group": "Quản lý nghiệp vụ",
+    "Description": "Quản lý danh sách tài sản, biến động, mã QR, tình trạng thiết bị",
+    "OrderIndex": 2,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 3,
+    "Code": "transfers",
+    "Name": "Lịch sử Bàn giao",
+    "Group": "Quản lý nghiệp vụ",
+    "Description": "Theo dõi lịch sử điều chuyển, biên bản bàn giao, chữ ký điện tử",
+    "OrderIndex": 3,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 4,
+    "Code": "maintenance",
+    "Name": "Bảo trì & Bảo hành",
+    "Group": "Quản lý nghiệp vụ",
+    "Description": "Theo dõi lịch bảo trì định kỳ, bảo hành, hạn sử dụng thiết bị",
+    "OrderIndex": 4,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 5,
+    "Code": "reports",
+    "Name": "Báo cáo & Thống kê",
+    "Group": "Báo cáo & Đánh giá",
+    "Description": "Báo cáo thiết bị theo khoa phòng, tần suất sử dụng, nhật ký công việc",
+    "OrderIndex": 5,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 6,
+    "Code": "kpi",
+    "Name": "Đánh giá KPI & Xếp loại",
+    "Group": "Báo cáo & Đánh giá",
+    "Description": "Bảng tính chấm điểm KPI trang thiết bị y tế theo 26 tiêu chuẩn",
+    "OrderIndex": 6,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 7,
+    "Code": "repair_requests",
+    "Name": "Phiếu đề nghị",
+    "Group": "Đề nghị & Yêu cầu",
+    "Description": "Tạo và tiếp nhận đề nghị sửa chữa, cấp phát, điều chuyển trang bị",
+    "OrderIndex": 7,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 8,
+    "Code": "categories",
+    "Name": "Kho & Danh mục",
+    "Group": "Danh mục dùng chung",
+    "Description": "Quản lý kho lưu trữ, phân loại danh mục tài sản và vật tư",
+    "OrderIndex": 8,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 9,
+    "Code": "equipments",
+    "Name": "Quản lý Thiết bị Y tế",
+    "Group": "Quản lý chuyên sâu",
+    "Description": "Quản lý chi tiết hồ sơ kỹ thuật, phân cấp chất lượng, hạn dùng thiết bị",
+    "OrderIndex": 9,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 10,
+    "Code": "departments",
+    "Name": "Quản lý Khoa Phòng & Nhân sự",
+    "Group": "Hệ thống & Tổ chức",
+    "Description": "Quản lý 36 khoa phòng ban, điều phối nhân sự và tài khoản",
+    "OrderIndex": 10,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  },
+  {
+    "Id": 11,
+    "Code": "settings",
+    "Name": "Cấu hình hệ thống",
+    "Group": "Hệ thống & Tổ chức",
+    "Description": "Cấu hình địa chỉ máy chủ mạng LAN, tự động chuyển hướng, sao lưu dữ liệu",
+    "OrderIndex": 11,
+    "IsActive": 1,
+    "IsSystem": 1,
+    "CreatedAt": "2026-10-06T14:02:32.014892"
+  }
+]

@@ -1,0 +1,441 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@config "../tailwind.config.js";
+@theme {
+  --color-inverse-on-surface: #eff1f4;
+  --color-surface-container-low: #f2f4f7;
+  --color-tertiary: #005a82;
+  --color-on-tertiary-container: #e4f2ff;
+  --color-on-primary-container: #eeefff;
+  --color-secondary-container: #d0e1fb;
+  --color-background: #f7f9fc;
+  --color-on-tertiary: #ffffff;
+  --color-on-error-container: #93000a;
+  --color-primary-container: #2563eb;
+  --color-outline: #737686;
+  --color-on-tertiary-fixed-variant: #004c6e;
+  --color-on-secondary-fixed-variant: #38485d;
+  --color-surface-bright: #f7f9fc;
+  --color-surface-tint: #0053db;
+  --color-on-surface: #191c1e;
+  --color-tertiary-container: #0074a6;
+  --color-inverse-primary: #b4c5ff;
+  --color-on-tertiary-fixed: #001e2f;
+  --color-primary: #004ac6;
+  --color-surface-container-highest: #e0e3e6;
+  --color-secondary-fixed: #d3e4fe;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-surface-container: #eceef1;
+  --color-on-primary-fixed: #00174b;
+  --color-surface-variant: #e0e3e6;
+  --color-on-error: #ffffff;
+  --color-secondary: #505f76;
+  --color-on-secondary-fixed: #0b1c30;
+  --color-on-primary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-tertiary-fixed: #c9e6ff;
+  --color-on-secondary-container: #54647a;
+  --color-surface-dim: #d8dadd;
+  --color-tertiary-fixed-dim: #89ceff;
+  --color-surface-container-lowest: #ffffff;
+  --color-outline-variant: #c3c6d7;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-on-secondary: #ffffff;
+  --color-primary-fixed: #dbe1ff;
+  --color-surface: #f7f9fc;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #2d3133;
+  --color-on-background: #191c1e;
+  --color-on-surface-variant: #434655;
+  --color-secondary-fixed-dim: #b7c8e1;
+  --color-surface-container-high: #e6e8eb;
+
+  --spacing-margin-desktop: 40px;
+  --spacing-unit: 4px;
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-sidebar-width: 280px;
+
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+
+  --font-display-lg: "Inter";
+  --font-headline-md: "Inter";
+  --font-body-md: "Inter";
+  --font-body-sm: "Inter";
+  --font-label-md: "Inter";
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.dark {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-container-lowest: #1e293b;
+  --color-surface-container-low: #334155;
+  --color-surface-container: #475569;
+  --color-surface-container-high: #64748b;
+  --color-surface-container-highest: #94a3b8;
+  --color-on-surface: #f8fafc;
+  --color-on-background: #f8fafc;
+  --color-secondary: #cbd5e1;
+  --color-outline-variant: #334155;
+  --color-outline: #475569;
+  --color-primary: #3b82f6; /* Lighter primary for dark mode */
+  --color-on-surface-variant: #e2e8f0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.sidebar-active {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.02) 100%);
+}
+
+/* Màu chữ tương ứng cho từng hạn sử dụng (không đổi màu nền) */
+tr.expiry-text-red td:not(:last-child),
+tr.expiry-text-red td:not(:last-child) *,
+html.dark tr.expiry-text-red td:not(:last-child),
+html.dark tr.expiry-text-red td:not(:last-child) * {
+  color: #dc2626 !important; /* Đỏ - Hết hạn */
+  font-weight: 600 !important;
+}
+tr.expiry-text-purple td:not(:last-child),
+tr.expiry-text-purple td:not(:last-child) *,
+html.dark tr.expiry-text-purple td:not(:last-child),
+html.dark tr.expiry-text-purple td:not(:last-child) * {
+  color: #9333ea !important; /* Tím - Dưới 1 tháng */
+  font-weight: 600 !important;
+}
+tr.expiry-text-orange td:not(:last-child),
+tr.expiry-text-orange td:not(:last-child) *,
+html.dark tr.expiry-text-orange td:not(:last-child),
+html.dark tr.expiry-text-orange td:not(:last-child) * {
+  color: #ea580c !important; /* Cam - Dưới 3 tháng */
+  font-weight: 600 !important;
+}
+tr.expiry-text-blue td:not(:last-child),
+tr.expiry-text-blue td:not(:last-child) *,
+html.dark tr.expiry-text-blue td:not(:last-child),
+html.dark tr.expiry-text-blue td:not(:last-child) * {
+  color: #2563eb !important; /* Xanh dương - Dưới 6 tháng */
+  font-weight: 600 !important;
+}
+tr.expiry-text-gray td:not(:last-child),
+tr.expiry-text-gray td:not(:last-child) *,
+html.dark tr.expiry-text-gray td:not(:last-child),
+html.dark tr.expiry-text-gray td:not(:last-child) * {
+  color: #64748b !important; /* Xám - Dưới 9 tháng */
+  font-weight: 600 !important;
+}
+tr.expiry-text-green td:not(:last-child),
+tr.expiry-text-green td:not(:last-child) *,
+html.dark tr.expiry-text-green td:not(:last-child),
+html.dark tr.expiry-text-green td:not(:last-child) * {
+  color: #16a34a !important; /* Xanh lá - Dưới 12 tháng */
+  font-weight: 600 !important;
+}
+
+/* Giữ nguyên màu nút sửa / xóa */
+table td button.text-primary,
+table td button.text-primary * {
+  color: #004ac6 !important;
+}
+table td button.text-error,
+table td button.text-error * {
+  color: #dc2626 !important;
+}
+
+/* Hiệu ứng Highlight khi di chuột vào chú giải */
+tr.highlighted-expiry-row {
+  background-color: rgba(59, 130, 246, 0.12) !important;
+  box-shadow: inset 4px 0 0 #2563eb;
+}
+html.dark tr.highlighted-expiry-row {
+  background-color: rgba(59, 130, 246, 0.22) !important;
+  box-shadow: inset 4px 0 0 #60a5fa;
+}
+
+/* ==========================================================================
+   ENTERPRISE UI/UX PRO TOKENS & HELPERS
+   ========================================================================== */
+.badge-status-success {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid rgba(167, 243, 208, 0.8);
+  font-weight: 600;
+}
+html.dark .badge-status-success {
+  background-color: rgba(6, 78, 59, 0.35);
+  color: #6ee7b7;
+  border: 1px solid rgba(6, 95, 70, 0.6);
+}
+
+.badge-status-warning {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid rgba(253, 230, 138, 0.8);
+  font-weight: 600;
+}
+html.dark .badge-status-warning {
+  background-color: rgba(120, 53, 15, 0.35);
+  color: #fcd34d;
+  border: 1px solid rgba(146, 64, 14, 0.6);
+}
+
+.badge-status-danger {
+  background-color: #fff1f2;
+  color: #be123c;
+  border: 1px solid rgba(254, 205, 211, 0.8);
+  font-weight: 600;
+}
+html.dark .badge-status-danger {
+  background-color: rgba(136, 19, 55, 0.35);
+  color: #fda4af;
+  border: 1px solid rgba(159, 18, 57, 0.6);
+}
+
+.badge-status-info {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  font-weight: 600;
+}
+html.dark .badge-status-info {
+  background-color: rgba(30, 58, 138, 0.35);
+  color: #93c5fd;
+  border: 1px solid rgba(30, 64, 175, 0.6);
+}
+
+.badge-status-neutral {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  font-weight: 600;
+}
+html.dark .badge-status-neutral {
+  background-color: rgba(30, 41, 59, 0.7);
+  color: #cbd5e1;
+  border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+/* Custom scrollbar thanh thoát cho phong cách Medical Enterprise */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Enterprise Card & Surface Helpers */
+.card-enterprise {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+html.dark .card-enterprise {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.focus-ring-medical {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus-ring-medical:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   LIGHT MODE COMPREHENSIVE THEME OVERRIDES (ALL MODULES: ASSETS TO SETTINGS)
+   Matches Dashboard clean light style: white cards, light borders, dark text
+   ========================================================================== */
+
+/* 1. Module Top Banners: Vibrant Blue/Indigo/Sky gradient like Dashboard in Light Mode */
+html:not(.dark) .from-\[\#0c142c\] {
+  background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #0284c7 100%) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.25) !important;
+}
+html:not(.dark) .from-\[\#0c142c\] h1,
+html:not(.dark) .from-\[\#0c142c\] h2,
+html:not(.dark) .from-\[\#0c142c\] .text-white {
+  color: #ffffff !important;
+}
+html:not(.dark) .from-\[\#0c142c\] p.text-slate-400,
+html:not(.dark) .from-\[\#0c142c\] span.text-slate-400 {
+  color: #e0e7ff !important;
+}
+html:not(.dark) .from-\[\#0c142c\] .bg-indigo-500\/20 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+html:not(.dark) .from-\[\#0c142c\] .text-indigo-300 {
+  color: #ffffff !important;
+}
+
+/* 2. Cards, Containers, Modals, Filter Bars: Pure White in Light Mode */
+html:not(.dark) .bg-\[\#0c142c\],
+html:not(.dark) .bg-\[\#0c142c\]\/90,
+html:not(.dark) .bg-\[\#0c142c\]\/95,
+html:not(.dark) .bg-\[\#0c142c\]\/80,
+html:not(.dark) .bg-\[\#0c142c\]\/60 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+
+/* 3. Typography inside white cards in Light Mode */
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) h1,
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) h2,
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) h3,
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) h4,
+html:not(.dark) .bg-\[\#0c142c\]\/90 h1,
+html:not(.dark) .bg-\[\#0c142c\]\/90 h2,
+html:not(.dark) .bg-\[\#0c142c\]\/90 h3,
+html:not(.dark) .bg-\[\#0c142c\]\/90 h4 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) .text-white:not(button):not(button *):not(.bg-blue-600 *):not(.bg-emerald-600 *):not(.bg-amber-600 *):not(.bg-rose-600 *):not(.bg-indigo-600 *):not(.bg-purple-600 *):not([class*="bg-gradient-"]),
+html:not(.dark) .bg-\[\#0c142c\]\/90 .text-white:not(button):not(button *):not(.bg-blue-600 *):not(.bg-emerald-600 *):not(.bg-amber-600 *):not(.bg-rose-600 *):not(.bg-indigo-600 *):not(.bg-purple-600 *):not([class*="bg-gradient-"]) {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) p.text-slate-400,
+html:not(.dark) .bg-\[\#0c142c\]\/90 p.text-slate-400,
+html:not(.dark) .bg-\[\#0c142c\]\/90 span.text-slate-400,
+html:not(.dark) .bg-\[\#0c142c\]:not(.from-\[\#0c142c\]) p.text-slate-300,
+html:not(.dark) .bg-\[\#0c142c\]\/90 p.text-slate-300 {
+  color: #64748b !important;
+}
+
+/* 4. Borders */
+html:not(.dark) .border-blue-500\/20,
+html:not(.dark) .border-blue-500\/30,
+html:not(.dark) .border-blue-500\/40,
+html:not(.dark) .border-slate-700\/60,
+html:not(.dark) .border-slate-700\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+/* 5. Table Headers */
+html:not(.dark) thead.bg-gradient-to-r th,
+html:not(.dark) thead.bg-gradient-to-r {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+html:not(.dark) thead.bg-gradient-to-r th {
+  color: #334155 !important;
+}
+
+/* 6. Form inputs, select, and textarea in Light Mode */
+html:not(.dark) input.bg-slate-900\/80,
+html:not(.dark) select.bg-slate-900\/80,
+html:not(.dark) textarea.bg-slate-900\/80,
+html:not(.dark) input.bg-slate-900,
+html:not(.dark) select.bg-slate-900,
+html:not(.dark) textarea.bg-slate-900 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+html:not(.dark) input.bg-slate-900\/80::placeholder,
+html:not(.dark) select.bg-slate-900\/80::placeholder,
+html:not(.dark) textarea.bg-slate-900\/80::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* 7. Action and filter buttons in Light Mode */
+html:not(.dark) button.bg-slate-900\/80:not(.bg-blue-600):not(.bg-emerald-600):not(.bg-amber-600):not(.bg-rose-600) {
+  background-color: #f8fafc !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+html:not(.dark) button.bg-slate-900\/80:hover:not(.bg-blue-600):not(.bg-emerald-600):not(.bg-amber-600):not(.bg-rose-600) {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+html:not(.dark) button.bg-slate-800\/80,
+html:not(.dark) button.bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* 8. Filter Badges / Status pills */
+html:not(.dark) .bg-emerald-950\/40,
+html:not(.dark) .bg-emerald-950\/60 {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+html:not(.dark) .bg-emerald-900\/60,
+html:not(.dark) .bg-emerald-900\/50 {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+}
+html:not(.dark) .bg-amber-950\/40 {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+  border-color: #fde68a !important;
+}
+html:not(.dark) .bg-amber-900\/60,
+html:not(.dark) .bg-amber-900\/50 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+html:not(.dark) .bg-rose-950\/40 {
+  background-color: #fff1f2 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+html:not(.dark) .bg-rose-900\/60,
+html:not(.dark) .bg-rose-900\/50 {
+  background-color: #ffe4e6 !important;
+  color: #9f1239 !important;
+}
+
+/* 9. Light mode table rows and surfaces */
+html:not(.dark) tr.bg-slate-800 {
+  background-color: #ffffff !important;
+}
+html:not(.dark) .bg-slate-900\/60,
+html:not(.dark) .bg-slate-900\/40 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+
+
+

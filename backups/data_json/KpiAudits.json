@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "AssessmentId": 1,
+    "Action": "CREATE",
+    "PerformedBy": "admin",
+    "IpAddress": "192.170.182.197",
+    "Details": "Khởi tạo bảng tính KPI cho đơn vị 'Kho Trang bị' kỳ 'Tháng 10/2026'.",
+    "CreatedAt": "2026-10-02 13:25:20.0747159"
+  },
+  {
+    "Id": 2,
+    "AssessmentId": 2,
+    "Action": "CREATE",
+    "PerformedBy": "admin",
+    "IpAddress": "192.170.182.197",
+    "Details": "Khởi tạo bảng tính KPI cho đơn vị 'Khoa Trang bị' kỳ 'Tháng 10/2026'.",
+    "CreatedAt": "2026-10-02 13:25:20.0746847"
+  }
+]

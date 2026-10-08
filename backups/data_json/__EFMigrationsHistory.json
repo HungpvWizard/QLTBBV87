@@ -1,0 +1,42 @@
+[
+  {
+    "MigrationId": "20260703145704_InitialCreate",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260703151950_AddPhase2Tables",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260704040714_AddAssetExtraFields",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260704054230_AddMedicalAssetFields",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260704060918_AddWarehouse",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260704081146_MakeReportedByNullable",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260809120310_AddRepairRequests",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260905045754_AddUserAuthFields",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260905154316_AddEquipmentTable",
+    "ProductVersion": "8.0.6"
+  },
+  {
+    "MigrationId": "20260909033108_AddExpiryDateToEquipments",
+    "ProductVersion": "8.0.6"
+  }
+]

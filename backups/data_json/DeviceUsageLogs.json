@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "AssetId": 1,
+    "UsageDate": "2026-09-22",
+    "UsageCount": 5,
+    "DepartmentName": "Khoa H?i s?c c?p c?u",
+    "RecordedBy": "admin",
+    "Notes": "Ca tr?c c?p c?u",
+    "CreatedAt": "2026-09-22 15:29:18.130523"
+  },
+  {
+    "Id": 2,
+    "AssetId": 2,
+    "UsageDate": "2026-09-22",
+    "UsageCount": 8,
+    "DepartmentName": "Khoa Ngoai",
+    "RecordedBy": "admin",
+    "Notes": "Phau thuat",
+    "CreatedAt": "2026-09-22 15:36:35.9892035"
+  },
+  {
+    "Id": 3,
+    "AssetId": 3,
+    "UsageDate": "2026-09-22",
+    "UsageCount": 4,
+    "DepartmentName": "Khoa Noi",
+    "RecordedBy": "admin",
+    "Notes": "Kham benh",
+    "CreatedAt": "2026-09-22 15:36:35.9898618"
+  },
+  {
+    "Id": 5,
+    "AssetId": 259,
+    "UsageDate": "2026-09-22",
+    "UsageCount": 2,
+    "DepartmentName": "Kho Trang bị (Còn ở kho)",
+    "RecordedBy": "admin",
+    "Notes": "",
+    "CreatedAt": "2026-09-23 07:35:55.9195432"
+  },
+  {
+    "Id": 6,
+    "AssetId": 2,
+    "UsageDate": "2026-09-23",
+    "UsageCount": 2,
+    "DepartmentName": "Khoa Ngoai",
+    "RecordedBy": "admin",
+    "Notes": "",
+    "CreatedAt": "2026-09-23 08:50:25.1051068"
+  },
+  {
+    "Id": 7,
+    "AssetId": 1,
+    "UsageDate": "2026-09-23",
+    "UsageCount": 1,
+    "DepartmentName": "Khoa H?i s?c c?p c?u",
+    "RecordedBy": "admin",
+    "Notes": "",
+    "CreatedAt": "2026-09-24 03:39:07.8232972"
+  },
+  {
+    "Id": 8,
+    "AssetId": 76,
+    "UsageDate": "2026-09-22",
+    "UsageCount": 1,
+    "DepartmentName": "Kho Trang bị (Còn ở kho)",
+    "RecordedBy": "admin",
+    "Notes": "",
+    "CreatedAt": "2026-09-30 06:31:43.2733307"
+  }
+]

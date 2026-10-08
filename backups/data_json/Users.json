@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Username": "admin",
+    "PasswordHash": "$2a$11$Pi6xgzl3Fn5x57zqVPt7XeZ38JcuUUPuBIF81GbLiqs9YcGWGD9FG",
+    "RoleId": 1,
+    "DepartmentId": null,
+    "CreatedAt": "2026-09-05 12:04:19.7725711",
+    "Email": "hungfcvn12@gmail.com",
+    "FullName": "Phạm Văn Hùng",
+    "IsActive": 1,
+    "LastLoginAt": "2026-10-07 10:03:02.7703753"
+  },
+  {
+    "Id": 2,
+    "Username": "dmtuan",
+    "PasswordHash": "$2a$11$ZmOeFzHEhdcseMg519tP6ORlXEyFTGlQC2bVJnc3gZuBZwiAm0usO",
+    "RoleId": 2,
+    "DepartmentId": null,
+    "CreatedAt": "2026-09-06 13:46:47.6037519",
+    "Email": "",
+    "FullName": "Dương Minh Tuấn",
+    "IsActive": 1,
+    "LastLoginAt": "2026-09-29 07:38:33.1186876"
+  },
+  {
+    "Id": 3,
+    "Username": "ltanh",
+    "PasswordHash": "$2a$11$ia5Un3bd48kT5YvrX2VzdOtDu1w50SEIqyEFopuhcoCwnJ9vQNWyG",
+    "RoleId": 3,
+    "DepartmentId": null,
+    "CreatedAt": "2026-09-06 13:47:19.2787922",
+    "Email": "",
+    "FullName": "Lê Tuấn Anh",
+    "IsActive": 1,
+    "LastLoginAt": "2026-10-06 15:04:18.0544088"
+  }
+]

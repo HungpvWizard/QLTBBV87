@@ -1,0 +1,1 @@
+using System; using BCrypt.Net; namespace FixHash { class Program { static void Main(string[] args) { Console.WriteLine("Verify: " + BCrypt.Net.BCrypt.Verify("admin123", "$2a$11$G0TpwVnDA1SAN2W47ytk4elV1CPw6C9MlwWVWzUZWBnQm4YMfGm3W")); } } }

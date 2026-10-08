@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo-bvqy87.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuanlyTrangbi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+      body, h1, h2, h3, h4, h5, h6, p, a:not(.material-symbols-outlined), span:not(.material-symbols-outlined), div:not(.material-symbols-outlined), table, th, td, input, button:not(.material-symbols-outlined), select, textarea {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+      }
+      table th {
+        font-weight: 600 !important;
+        color: #475569 !important; 
+        font-size: 13px !important;
+        letter-spacing: 0.5px !important;
+      }
+      table td {
+        font-weight: 500 !important;
+        color: #1e293b !important;
+        font-size: 14px !important;
+      }
+      /* Dark mode support */
+      .dark table th, html.dark table th {
+        color: #94a3b8 !important;
+      }
+      .dark table td, html.dark table td {
+        color: #f1f5f9 !important;
+      }
+
+      /* Màu chữ tương ứng cho từng hạn sử dụng (không đổi màu nền) */
+      tr.expiry-text-red td:not(:last-child),
+      tr.expiry-text-red td:not(:last-child) *,
+      html.dark tr.expiry-text-red td:not(:last-child),
+      html.dark tr.expiry-text-red td:not(:last-child) * {
+        color: #dc2626 !important; /* Đỏ - Hết hạn */
+        font-weight: 600 !important;
+      }
+      tr.expiry-text-purple td:not(:last-child),
+      tr.expiry-text-purple td:not(:last-child) *,
+      html.dark tr.expiry-text-purple td:not(:last-child),
+      html.dark tr.expiry-text-purple td:not(:last-child) * {
+        color: #9333ea !important; /* Tím - Dưới 1 tháng */
+        font-weight: 600 !important;
+      }
+      tr.expiry-text-orange td:not(:last-child),
+      tr.expiry-text-orange td:not(:last-child) *,
+      html.dark tr.expiry-text-orange td:not(:last-child),
+      html.dark tr.expiry-text-orange td:not(:last-child) * {
+        color: #ea580c !important; /* Cam - Dưới 3 tháng */
+        font-weight: 600 !important;
+      }
+      tr.expiry-text-blue td:not(:last-child),
+      tr.expiry-text-blue td:not(:last-child) *,
+      html.dark tr.expiry-text-blue td:not(:last-child),
+      html.dark tr.expiry-text-blue td:not(:last-child) * {
+        color: #2563eb !important; /* Xanh dương - Dưới 6 tháng */
+        font-weight: 600 !important;
+      }
+      tr.expiry-text-gray td:not(:last-child),
+      tr.expiry-text-gray td:not(:last-child) *,
+      html.dark tr.expiry-text-gray td:not(:last-child),
+      html.dark tr.expiry-text-gray td:not(:last-child) * {
+        color: #64748b !important; /* Xám - Dưới 9 tháng */
+        font-weight: 600 !important;
+      }
+      tr.expiry-text-green td:not(:last-child),
+      tr.expiry-text-green td:not(:last-child) *,
+      html.dark tr.expiry-text-green td:not(:last-child),
+      html.dark tr.expiry-text-green td:not(:last-child) * {
+        color: #16a34a !important; /* Xanh lá - Dưới 12 tháng */
+        font-weight: 600 !important;
+      }
+
+      /* Giữ nguyên màu nút sửa / xóa */
+      table td button.text-primary,
+      table td button.text-primary * {
+        color: #004ac6 !important;
+      }
+      table td button.text-error,
+      table td button.text-error * {
+        color: #dc2626 !important;
+      }
+
+      /* Hiệu ứng Highlight khi di chuột vào chú giải */
+      tr.highlighted-expiry-row {
+        background-color: rgba(59, 130, 246, 0.12) !important;
+        box-shadow: inset 4px 0 0 #2563eb;
+      }
+      html.dark tr.highlighted-expiry-row {
+        background-color: rgba(59, 130, 246, 0.22) !important;
+        box-shadow: inset 4px 0 0 #60a5fa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
