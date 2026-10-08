@@ -1,4 +1,4 @@
-﻿using AssetManagement.WebAPI.Services;
+using AssetManagement.WebAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,14 +15,24 @@ public class BackupController : ControllerBase
     private readonly BackupSchedulerService _scheduler;
 
     // ÄÆ°á»ng dáº«n Ä‘áº¿n file DB gá»‘c
-    private string DbPath => Path.GetFullPath(
-        _config.GetConnectionString("DefaultConnection")!
-            .Replace("Data Source=", "")
-            .Trim()
-    );
+    private bool IsSqlite => (_config.GetConnectionString("DefaultConnection") ?? "").Contains("Data Source=") &&
+                             !(_config.GetConnectionString("DefaultConnection") ?? "").Contains("Server=");
 
-    // ThÆ° má»¥c chá»©a cÃ¡c báº£n backup
-    private string BackupDir => Path.Combine(Path.GetDirectoryName(DbPath)!, "backups");
+    private string DbPath
+    {
+        get
+        {
+            var conn = _config.GetConnectionString("DefaultConnection") ?? "Data Source=assetmanagement.db";
+            if (conn.Contains("Data Source=") && !conn.Contains("Server="))
+            {
+                var clean = conn.Replace("Data Source=", "").Trim();
+                if (!clean.Contains(";")) return Path.GetFullPath(clean);
+            }
+            return Path.Combine(_env.ContentRootPath, "assetmanagement.db");
+        }
+    }
+
+    private string BackupDir => Path.Combine(_env.ContentRootPath, "backups");
 
     public BackupController(IWebHostEnvironment env, IConfiguration config,
         ILogger<BackupController> logger, BackupSchedulerService scheduler)

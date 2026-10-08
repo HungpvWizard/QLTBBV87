@@ -50,9 +50,35 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(optio
     options.MultipartBodyLengthLimit = 100 * 1024 * 1024;
 });
 
-// Configure Entity Framework Core with SQLite
+// ─── CƠ SỞ DỮ LIỆU: HỖ TRỢ LINH HOẠT CẢ MICROSOFT SQL SERVER & SQLITE ────────
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+                       ?? "Data Source=assetmanagement.db";
+var dbProvider = builder.Configuration.GetValue<string>("DatabaseProvider", "");
+
+// Tự động nhận diện Microsoft SQL Server nếu chuỗi kết nối chứa Server= / Database= hoặc chỉ định rõ DatabaseProvider=SqlServer
+bool isSqlServer = string.Equals(dbProvider, "SqlServer", StringComparison.OrdinalIgnoreCase) ||
+                   connectionString.Contains("Server=", StringComparison.OrdinalIgnoreCase) ||
+                   connectionString.Contains("Initial Catalog=", StringComparison.OrdinalIgnoreCase) ||
+                   connectionString.Contains("Database=", StringComparison.OrdinalIgnoreCase) ||
+                   connectionString.Contains("User Id=", StringComparison.OrdinalIgnoreCase);
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    if (isSqlServer)
+    {
+        options.UseSqlServer(connectionString, sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null);
+        });
+    }
+    else
+    {
+        options.UseSqlite(connectionString);
+    }
+});
 
 // ─── JWT Authentication ───────────────────────────────────────────────────
 var jwtSection = builder.Configuration.GetSection("JwtSettings");
@@ -129,11 +155,36 @@ if (app.Environment.IsDevelopment() || builder.Configuration.GetValue<bool>("Ena
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Migrate database, tối ưu SQLite cho đồng thời cao và seed dữ liệu ban đầu
+// Khởi tạo cơ sở dữ liệu (tự động nhận diện Microsoft SQL Server hoặc SQLite)
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    dbContext.Database.Migrate();
+
+    if (dbContext.Database.IsSqlServer())
+    {
+        // ─── KHỞI TẠO VÀ ĐỒNG BỘ TRÊN MICROSOFT SQL SERVER ───
+        try
+        {
+            Console.WriteLine("[Database] Đang kết nối Microsoft SQL Server...");
+            dbContext.Database.EnsureCreated();
+            Console.WriteLine("[Database] Khởi tạo và kiểm tra bảng dữ liệu trên Microsoft SQL Server THÀNH CÔNG!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Lỗi khởi tạo Microsoft SQL Server] {ex.Message}");
+        }
+    }
+    else if (dbContext.Database.IsSqlite())
+    {
+        // ─── KHỞI TẠO VÀ TỐI ƯU HÓA TRÊN SQLITE ───
+        try
+        {
+            dbContext.Database.Migrate();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Lỗi Migration SQLite] {ex.Message}");
+        }
 
     // ─── TỐI ƯU HÓA CƠ SỞ DỮ LIỆU SQLITE CHO 100+ NGƯỜI DÙNG ĐỒNG THỜI ───
     // 1. WAL (Write-Ahead Logging): Cho phép hàng trăm người cùng ĐỌC mà không bị khóa bởi người GHI
@@ -315,6 +366,7 @@ using (var scope = app.Services.CreateScope())
     {
         Console.WriteLine($"[Cảnh báo tối ưu SQLite] {ex.Message}");
     }
+}
 
     // Seed tài khoản admin mặc định nếu chưa có
     if (!dbContext.Users.Any())
