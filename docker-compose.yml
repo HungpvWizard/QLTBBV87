@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # 1. Ứng dụng chính AssetFlow (Backend .NET 8 + Frontend React)
+  assetflow-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: assetflow_system
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/assetmanagement.db
+    volumes:
+      - ./data:/app/data
+      - ./backups:/app/backups
+    networks:
+      - assetflow-net
+
+  # 2. (Tùy chọn) Máy chủ Cơ sở dữ liệu Microsoft SQL Server 2022
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: assetflow_mssql
+    restart: always
+    profiles:
+      - mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=AdminPass@123456
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql/data
+    networks:
+      - assetflow-net
+
+networks:
+  assetflow-net:
+    driver: bridge
+
+volumes:
+  mssql_data:
+    driver: local
