@@ -1,0 +1,45 @@
+{
+  "meta": { "schema_version": "1.1.0", "awf_version": "3.3.0" },
+  "project": { 
+    "name": "Quản lý Tài sản - Thiết bị (Asset Management)", 
+    "type": "Web Application (Client-Server)", 
+    "status": "MVP + Phase 2 Completed" 
+  },
+  "tech_stack": { 
+    "frontend": {
+      "framework": "React 18 + Vite",
+      "styling": "TailwindCSS v4 (@tailwindcss/postcss)",
+      "router": "react-router-dom",
+      "icons": "lucide-react",
+      "http": "axios",
+      "plugins": "html5-qrcode, react-signature-canvas, jspdf, jspdf-autotable"
+    }, 
+    "backend": {
+      "framework": "ASP.NET Core 8.0 Web API",
+      "architecture": "Clean Architecture (Domain, Application, Infrastructure, WebAPI)",
+      "orm": "Entity Framework Core"
+    }, 
+    "database": {
+      "type": "SQLite (MVP)",
+      "file": "assetmanagement.db"
+    } 
+  },
+  "database_schema": { 
+    "tables": ["Users", "Roles", "Departments", "Categories", "Assets", "AssetTransfers", "MaintenanceTickets"]
+  },
+  "api_endpoints": [
+    "GET, POST, PUT, DELETE /api/assets",
+    "GET, POST, PUT, DELETE /api/categories",
+    "GET, POST /api/assettransfers",
+    "GET, POST /api/maintenancetickets"
+  ],
+  "features": [
+    "Quản lý danh mục (CRUD cơ bản)",
+    "Quản lý tài sản",
+    "Luân chuyển, bàn giao tài sản",
+    "Quét mã QR bằng Camera web",
+    "Vẽ chữ ký điện tử xác nhận bàn giao",
+    "Xuất PDF Biên bản bàn giao có chữ ký",
+    "Quản lý phiếu báo hỏng, bảo trì thiết bị"
+  ]
+}

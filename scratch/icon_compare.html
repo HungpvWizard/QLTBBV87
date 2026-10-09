@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  body { background: #19273a; color: white; font-family: system-ui, sans-serif; padding: 30px; }
+  .grid { display: flex; gap: 24px; align-items: center; margin-bottom: 24px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 64px; text-align: center; font-size: 11px; }
+  .icon-box { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; }
+  svg { width: 32px; height: 32px; }
+</style>
+</head>
+<body>
+  <h2>Row 1: Original from Image 2</h2>
+  <img src='extracted_icons/contact_sheet_3x.png' style='height: 50px;'>
+
+  <h2>Row 2: Handcrafted Vector SVGs</h2>
+  <div class='grid'>
+    <!-- 1. Dashboard / Home -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='blueGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#3b82f6' flood-opacity='0.6'/>
+            </filter>
+            <linearGradient id='homeGrad' x1='0' y1='0' x2='0' y2='1'>
+              <stop offset='0%' stop-color='#38bdf8'/>
+              <stop offset='100%' stop-color='#1d4ed8'/>
+            </linearGradient>
+            <linearGradient id='roofGrad' x1='0' y1='0' x2='0' y2='1'>
+              <stop offset='0%' stop-color='#60a5fa'/>
+              <stop offset='100%' stop-color='#2563eb'/>
+            </linearGradient>
+          </defs>
+          <g filter='url(#blueGlow)'>
+            <!-- Roof -->
+            <path d='M16 4L3 14.5C2.5 14.9 2.8 15.8 3.5 15.8H6V26C6 26.6 6.4 27 7 27H25C25.6 27 26 26.6 26 26V15.8H28.5C29.2 15.8 29.5 14.9 29 14.5L16 4Z' fill='url(#homeGrad)'/>
+            <!-- Outer roof eaves line -->
+            <path d='M16 4.5L4.5 14H7.5L16 7L24.5 14H27.5L16 4.5Z' fill='#93c5fd'/>
+            <!-- Door -->
+            <rect x='13' y='18' width='6' height='9' rx='1' fill='#152336'/>
+          </g>
+        </svg>
+      </div>
+      <span>Dashboard</span>
+    </div>
+
+    <!-- 2. Assets / Isometric Box -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='orangeGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#f97316' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#orangeGlow)'>
+            <!-- Top Face -->
+            <path d='M16 4L27 10L16 16L5 10L16 4Z' fill='#fbbf24'/>
+            <!-- Top Tape -->
+            <path d='M13.5 8.7L18.5 11.3L16 12.7L11 10.1L13.5 8.7Z' fill='#9a3412'/>
+            <!-- Left Face -->
+            <path d='M5 10L16 16V27L5 21V10Z' fill='#ea580c'/>
+            <!-- Left Tape -->
+            <path d='M16 16L16 19.5L11 17V13.5L16 16Z' fill='#9a3412'/>
+            <!-- Right Face -->
+            <path d='M16 16L27 10V21L16 27V16Z' fill='#f97316'/>
+            <!-- Right Tape -->
+            <path d='M16 16L21 13.5V17L16 19.5V16Z' fill='#b45309'/>
+            <!-- Edge stroke -->
+            <path d='M16 4L27 10V21L16 27L5 21V10L16 4Z' stroke='#7c2d12' stroke-width='0.8' stroke-linejoin='round'/>
+            <path d='M16 16L27 10M16 16L5 10M16 16V27' stroke='#7c2d12' stroke-width='0.8' stroke-linejoin='round'/>
+          </g>
+        </svg>
+      </div>
+      <span>Tài sản</span>
+    </div>
+
+    <!-- 3. Transfers / Calendar + Clock -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='greenGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#10b981' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#greenGlow)'>
+            <!-- Calendar Body -->
+            <rect x='5' y='6' width='20' height='21' rx='4' fill='#10b981'/>
+            <!-- Top Rings -->
+            <rect x='9' y='3.5' width='2.5' height='5' rx='1.2' fill='#a7f3d0'/>
+            <rect x='18.5' y='3.5' width='2.5' height='5' rx='1.2' fill='#a7f3d0'/>
+            <!-- Header bar -->
+            <path d='M5 12H25V8C25 6.9 24.1 6 23 6H7C5.9 6 5 6.9 5 8V12Z' fill='#34d399'/>
+            <!-- Grid Dots -->
+            <circle cx='9.5' cy='16' r='1.2' fill='#a7f3d0'/>
+            <circle cx='14' cy='16' r='1.2' fill='#a7f3d0'/>
+            <circle cx='9.5' cy='20.5' r='1.2' fill='#a7f3d0'/>
+            <circle cx='14' cy='20.5' r='1.2' fill='#a7f3d0'/>
+            <!-- Clock Badge in bottom right -->
+            <circle cx='22' cy='22' r='6.5' fill='#34d399' stroke='#047857' stroke-width='1.2'/>
+            <path d='M22 18.5V22H24.5' stroke='#064e3b' stroke-width='1.5' stroke-linecap='round'/>
+          </g>
+        </svg>
+      </div>
+      <span>Bàn giao</span>
+    </div>
+
+    <!-- 4. Maintenance / Wrench + Gear -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='redGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#f43f5e' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#redGlow)'>
+            <!-- Small gear in lower left -->
+            <path d='M10 18.5L11.5 19L11 20.5L12 21.5L13.5 21L14 22.5H15.5L16 21L17.5 21.5L18.5 20.5L18 19L19.5 18.5V17L18 16.5L18.5 15L17.5 14L16 14.5L15.5 13H14L13.5 14.5L12 14L11 15L11.5 16.5L10 17V18.5Z' fill='#f43f5e'/>
+            <circle cx='14.7' cy='17.7' r='2' fill='#152336'/>
+            <!-- Diagonal Wrench -->
+            <g transform='rotate(-40 18 16)'>
+              <path d='M16 7C14.3 7 13 8.3 13 10C13 10.9 13.4 11.7 14 12.2V22C14 23.1 14.9 24 16 24C17.1 24 18 23.1 18 22V12.2C18.6 11.7 19 10.9 19 10C19 8.3 17.7 7 16 7Z' fill='#fb7185'/>
+              <path d='M15 6H17V9.5H15V6Z' fill='#152336'/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <span>Bảo trì</span>
+    </div>
+
+    <!-- 5. Repair Requests / Clipboard Check -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='purpleGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#a855f7' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#purpleGlow)'>
+            <!-- Clipboard body -->
+            <rect x='6' y='6' width='18' height='22' rx='3.5' fill='#8b5cf6'/>
+            <!-- Top clip -->
+            <rect x='11' y='4' width='8' height='4' rx='1.5' fill='#c084fc'/>
+            <!-- Lines -->
+            <rect x='10' y='11' width='10' height='2' rx='1' fill='#e9d5ff'/>
+            <rect x='10' y='15' width='10' height='2' rx='1' fill='#e9d5ff'/>
+            <rect x='10' y='19' width='6' height='2' rx='1' fill='#e9d5ff'/>
+            <!-- Checkmark badge in bottom right -->
+            <circle cx='21.5' cy='22.5' r='5.5' fill='#7c3aed' stroke='#c084fc' stroke-width='1'/>
+            <path d='M19 22.5L20.8 24.3L24.5 20.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>
+          </g>
+        </svg>
+      </div>
+      <span>Đề nghị</span>
+    </div>
+
+    <!-- 6. Categories / Warehouse -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='cyanGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#06b6d4' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#cyanGlow)'>
+            <!-- Warehouse outline / body -->
+            <path d='M16 4L4 12V26C4 26.6 4.4 27 5 27H27C27.6 27 28 26.6 28 26V12L16 4Z' fill='#0284c7'/>
+            <!-- Roof peak vent -->
+            <polygon points='16,8 14,11 18,11' fill='#38bdf8'/>
+            <!-- Entrance door / cutout -->
+            <rect x='9' y='14' width='14' height='13' rx='1' fill='#152336'/>
+            <!-- Internal shelves / pallet -->
+            <rect x='11' y='17' width='10' height='2' fill='#38bdf8'/>
+            <rect x='11' y='21' width='10' height='2' fill='#38bdf8'/>
+            <rect x='14' y='23' width='4' height='4' fill='#0284c7'/>
+          </g>
+        </svg>
+      </div>
+      <span>Kho bãi</span>
+    </div>
+
+    <!-- 7. Equipments / Monitor + Gear -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='blueGearGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#3b82f6' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#blueGearGlow)'>
+            <!-- Monitor screen -->
+            <rect x='4' y='5' width='21' height='16' rx='2.5' fill='#2563eb'/>
+            <rect x='6' y='7' width='17' height='12' rx='1' fill='#1e40af'/>
+            <path d='M8 9H12V13H8V9Z' fill='#60a5fa' opacity='0.7'/>
+            <!-- Stand -->
+            <rect x='12.5' y='21' width='4' height='4' fill='#1d4ed8'/>
+            <rect x='9' y='25' width='11' height='2' rx='1' fill='#1d4ed8'/>
+            <!-- Gear in lower right -->
+            <circle cx='22.5' cy='21.5' r='5.5' fill='#38bdf8'/>
+            <circle cx='22.5' cy='21.5' r='2' fill='#152336'/>
+          </g>
+        </svg>
+      </div>
+      <span>Thiết bị</span>
+    </div>
+
+    <!-- 8. Users / User + Gear -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='goldGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#f59e0b' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#goldGlow)'>
+            <!-- Head -->
+            <circle cx='14' cy='9' r='5' fill='#fbbf24'/>
+            <!-- Body -->
+            <path d='M5 25C5 20.6 8.6 17 13 17H15C19.4 17 23 20.6 23 25V26H5V25Z' fill='#f59e0b'/>
+            <!-- Gear in lower right -->
+            <circle cx='22.5' cy='22.5' r='5.5' fill='#fbbf24'/>
+            <circle cx='22.5' cy='22.5' r='2' fill='#152336'/>
+          </g>
+        </svg>
+      </div>
+      <span>Tài khoản</span>
+    </div>
+
+    <!-- 9. Settings / Purple Gear -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='gearGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#a855f7' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#gearGlow)'>
+            <!-- 6-tooth gear -->
+            <path d='M16 6C15.2 6 14.5 6.5 14.3 7.3L13.8 9.1C13.2 9.3 12.6 9.7 12 10.1L10.3 9.3C9.5 8.9 8.6 9.2 8.2 10L6.7 12.6C6.3 13.3 6.5 14.3 7.2 14.8L8.7 15.9C8.6 16.3 8.6 16.7 8.7 17.1L7.2 18.2C6.5 18.7 6.3 19.7 6.7 20.4L8.2 23C8.6 23.8 9.5 24.1 10.3 23.7L12 22.9C12.6 23.3 13.2 23.7 13.8 23.9L14.3 25.7C14.5 26.5 15.2 27 16 27H19C19.8 27 20.5 26.5 20.7 25.7L21.2 23.9C21.8 23.7 22.4 23.3 23 22.9L24.7 23.7C25.5 24.1 26.4 23.8 26.8 23L28.3 20.4C28.7 19.7 28.5 18.7 27.8 18.2L26.3 17.1C26.4 16.7 26.4 16.3 26.3 15.9L27.8 14.8C28.5 14.3 28.7 13.3 28.3 12.6L26.8 10C26.4 9.2 25.5 8.9 24.7 9.3L23 10.1C22.4 9.7 21.8 9.3 21.2 9.1L20.7 7.3C20.5 6.5 19.8 6 19 6H16Z' fill='#8b5cf6'/>
+            <!-- Center hole -->
+            <circle cx='17.5' cy='16.5' r='4' fill='#152336'/>
+          </g>
+        </svg>
+      </div>
+      <span>Cấu hình</span>
+    </div>
+
+    <!-- 10. Logout / Exit Door -->
+    <div class='item'>
+      <div class='icon-box'>
+        <svg viewBox='0 0 32 32' fill='none'>
+          <defs>
+            <filter id='logoutGlow' x='-20%' y='-20%' width='140%' height='140%'>
+              <feDropShadow dx='0' dy='0' stdDeviation='1.5' flood-color='#ef4444' flood-opacity='0.6'/>
+            </filter>
+          </defs>
+          <g filter='url(#logoutGlow)'>
+            <!-- Door frame -->
+            <path d='M16 6H7C5.9 6 5 6.9 5 8V24C5 25.1 5.9 26 7 26H16' stroke='#ef4444' stroke-width='3' stroke-linecap='round'/>
+            <!-- Exit arrow -->
+            <path d='M12 16H27M27 16L21 10M27 16L21 22' stroke='#ef4444' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
+          </g>
+        </svg>
+      </div>
+      <span>Đăng xuất</span>
+    </div>
+  </div>
+</body>
+</html>

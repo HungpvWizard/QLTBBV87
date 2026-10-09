@@ -1,55 +1,9 @@
-# Node modules & Dependencies
-node_modules/
-frontend/node_modules/
-
-# IDE & Editors
-.vscode/
-.vs/
-*.user
-*.suo
-
-# Build outputs & Binaries
 bin/
 obj/
+.vs/
+node_modules/
 dist/
-publish/
-DeployPackage/
-runtimes/
-linux-*/
-maccatalyst-*/
-osx-*/
-browser-wasm/
-*.zip
-*.exe
-*.dll
-*.pdb
-*.deps.json
-*.runtimeconfig.json
-*.staticwebassets.runtime.json
-
-# Environment & Config secrets
 .env
-.env.local
-
-# SQLite Databases & Binary Backups (preserve source code & JSON dumps)
-*.db
-*.db-shm
-*.db-wal
-*.sqlite
-backups/*.db
-
-# OS generated files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Temporary & Agent files
-.agents/
-.brain/
-scratch/
-scratch_hash/
-*.log
-check_admin.py
-check_hashes.py
-update_admin.py
-new_hash.txt
+.env.*
+!.env.example
+appsettings.Production.json

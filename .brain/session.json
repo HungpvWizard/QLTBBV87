@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-07-03T22:34:00Z",
+  "working_on": {
+    "feature": "None",
+    "task": "Nghỉ ngơi / Chờ phase tiếp theo",
+    "status": "idle",
+    "files": [],
+    "blockers": []
+  },
+  "pending_tasks": [
+    { "task": "Chuẩn bị deploy lên Production (Optional)", "priority": "medium", "notes": "Cần cấu hình VPS hoặc Azure" },
+    { "task": "Tích hợp Authentication JWT thực sự", "priority": "high", "notes": "Hiện tại MVP đang bỏ qua Auth" }
+  ],
+  "recent_changes": [
+    { 
+      "timestamp": "2026-07-03T22:28:00Z", 
+      "type": "feature", 
+      "description": "Hoàn thành Phase 2 (Quét QR, Chữ ký điện tử, Biên bản PDF, Bảo trì thiết bị)", 
+      "files": ["AssetList.tsx", "QRScanner.tsx", "MaintenanceList.tsx", "TransferHistory.tsx", "AssetTransfersController.cs", "MaintenanceTicketsController.cs"] 
+    },
+    {
+      "timestamp": "2026-07-03T22:27:00Z",
+      "type": "bugfix",
+      "description": "Sửa lỗi build Vite/Tailwind V4 bằng cách sử dụng @tailwindcss/postcss",
+      "files": ["postcss.config.js"]
+    }
+  ],
+  "errors_encountered": [
+    { "error": "Tailwind PostCSS plugin error", "solution": "Install @tailwindcss/postcss", "resolved": true }
+  ],
+  "decisions_made": [
+    { "decision": "Dùng jsPDF ở frontend để sinh PDF", "reason": "Dễ dàn trang hơn so với backend sinh PDF" },
+    { "decision": "Dùng html5-qrcode thay vì react-qr-reader", "reason": "react-qr-reader ít được maintain và lỗi trên React 18" },
+    { "decision": "Bỏ qua JWT cho MVP", "reason": "Ưu tiên xây dựng tính năng hiển thị và luồng chạy nhanh" }
+  ]
+}
