@@ -13,28 +13,37 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:5000
-      - ConnectionStrings__DefaultConnection=Data Source=/app/data/assetmanagement.db
+      - DatabaseProvider=SqlServer
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=AssetManagementDB;User Id=sa;Password=AssetFlow@BVQY87#2026;TrustServerCertificate=True;MultipleActiveResultSets=True;
     volumes:
       - ./data:/app/data
       - ./backups:/app/backups
+    depends_on:
+      sqlserver:
+        condition: service_healthy
     networks:
       - assetflow-net
 
-  # 2. (Tùy chọn) Máy chủ Cơ sở dữ liệu Microsoft SQL Server 2022
+  # 2. Máy chủ Cơ sở dữ liệu Microsoft SQL Server 2022
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: assetflow_mssql
     restart: always
-    profiles:
-      - mssql
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=AdminPass@123456
+      - MSSQL_SA_PASSWORD=AssetFlow@BVQY87#2026
       - MSSQL_PID=Express
     ports:
       - "1433:1433"
     volumes:
       - mssql_data:/var/opt/mssql/data
+      - ./backups:/backups
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'AssetFlow@BVQY87#2026' -C -Q 'SELECT 1' || /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'AssetFlow@BVQY87#2026' -Q 'SELECT 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
     networks:
       - assetflow-net
 

@@ -46,6 +46,7 @@ ENV ASPNETCORE_URLS=http://+:5000 \
 RUN mkdir -p /app/data /app/backups
 
 COPY --from=build-backend /app/publish .
+COPY backups/ /app/backups/
 
 VOLUME ["/app/data", "/app/backups"]
 

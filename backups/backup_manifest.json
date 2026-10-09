@@ -1,7 +1,7 @@
 {
-  "backup_time": "08/10/2026 15:05:48",
-  "timestamp": "20261008_150548",
-  "database_file": "backup_20261008_150548.db",
+  "backup_time": "09/10/2026 14:28:17",
+  "timestamp": "20261009_142817",
+  "database_file": "backup_20261009_142817.db",
   "database_size_bytes": 360448,
   "tables_count": 19,
   "tables_summary": {
@@ -16,7 +16,7 @@
     "MaintenanceTickets": 2,
     "RepairRequests": 3,
     "Equipments": 362,
-    "SecurityAuditLogs": 51,
+    "SecurityAuditLogs": 53,
     "DeviceUsageLogs": 7,
     "KpiDefinitions": 26,
     "KpiAssessments": 2,

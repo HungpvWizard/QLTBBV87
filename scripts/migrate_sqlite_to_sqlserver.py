@@ -57,10 +57,8 @@ def generate_sql():
         "-- SCRIPT IMPORT DỮ LIỆU SANG MICROSOFT SQL SERVER 2019/2022",
         "-- TỰ ĐỘNG SINH TỪ CSDL GỐC SQLITE (BẢO TOÀN 100% DỮ LIỆU)",
         "-- =============================================================================",
-        "USE [AssetManagementDB];",
-        "GO",
         "SET NOCOUNT ON;",
-        "BEGIN TRANSACTION;",
+        "GO",
         ""
     ]
 
@@ -75,6 +73,7 @@ def generate_sql():
                 continue
 
             col_names = [col[1] for col in columns_info]
+            pk_col = col_names[0]
             # Wrap column names with brackets for SQL Server (tránh trùng từ khóa như Group, Order, etc.)
             escaped_cols = [f"[{col}]" for col in col_names]
             cols_str = ", ".join(escaped_cols)
@@ -90,7 +89,8 @@ def generate_sql():
             for row in rows:
                 vals = [format_val(v) for v in row]
                 vals_str = ", ".join(vals)
-                lines.append(f"INSERT INTO [{table}] ({cols_str}) VALUES ({vals_str});")
+                pk_val = format_val(row[0])
+                lines.append(f"IF NOT EXISTS (SELECT 1 FROM [{table}] WHERE [{pk_col}] = {pk_val}) INSERT INTO [{table}] ({cols_str}) VALUES ({vals_str});")
 
             lines.append(f"SET IDENTITY_INSERT [{table}] OFF;")
             lines.append("GO")
@@ -100,7 +100,6 @@ def generate_sql():
         except Exception as e:
             print(f"[!] Canh bao bang {table}: {e}")
 
-    lines.append("COMMIT TRANSACTION;")
     lines.append("PRINT N'>>> DA IMPORT THANH CONG 100% DU LIEU SANG MICROSOFT SQL SERVER! <<<';")
     lines.append("GO")
 

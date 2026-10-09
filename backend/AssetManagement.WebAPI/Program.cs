@@ -168,6 +168,9 @@ using (var scope = app.Services.CreateScope())
             Console.WriteLine("[Database] Đang kết nối Microsoft SQL Server...");
             dbContext.Database.EnsureCreated();
             Console.WriteLine("[Database] Khởi tạo và kiểm tra bảng dữ liệu trên Microsoft SQL Server THÀNH CÔNG!");
+
+            // Tự động nạp toàn bộ 362 thiết bị, 37 khoa phòng nếu database mới tạo và đang trống
+            DbDataSeeder.SeedSqlServerIfEmpty(dbContext, app.Environment.ContentRootPath);
         }
         catch (Exception ex)
         {
@@ -348,7 +351,7 @@ using (var scope = app.Services.CreateScope())
 
         dbContext.Database.ExecuteSqlRaw(@"
             CREATE INDEX IF NOT EXISTS IX_Assets_Serial ON Assets(Serial);
-            CREATE INDEX IF NOT EXISTS IX_Assets_QrCode ON Assets(QrCode);
+            CREATE INDEX IF NOT EXISTS IX_Assets_AssetTag ON Assets(AssetTag);
             CREATE INDEX IF NOT EXISTS IX_Assets_CategoryId ON Assets(CategoryId);
             CREATE INDEX IF NOT EXISTS IX_Assets_DepartmentId ON Assets(DepartmentId);
             CREATE INDEX IF NOT EXISTS IX_Assets_Status ON Assets(Status);
