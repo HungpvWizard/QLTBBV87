@@ -448,5 +448,14 @@
     "Details": "Đăng nhập hệ thống thành công",
     "IsSuccess": 1,
     "Timestamp": "2026-10-07 10:03:02.9302383"
+  },
+  {
+    "Id": 51,
+    "Action": "LOGIN_SUCCESS",
+    "Username": "admin",
+    "IpAddress": "127.0.0.1",
+    "Details": "Đăng nhập hệ thống thành công",
+    "IsSuccess": 1,
+    "Timestamp": "2026-10-08 15:02:40.755257"
   }
 ]

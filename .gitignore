@@ -42,3 +42,14 @@ backups/*.db
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Temporary & Agent files
+.agents/
+.brain/
+scratch/
+scratch_hash/
+*.log
+check_admin.py
+check_hashes.py
+update_admin.py
+new_hash.txt
